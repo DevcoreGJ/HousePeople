@@ -1,5 +1,3 @@
-// person.cpp
-
 #include "person.h"
 
 // Constructor definition
