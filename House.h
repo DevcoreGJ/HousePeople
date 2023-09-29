@@ -1,4 +1,4 @@
-// house.h (Header file)
+// house.h
 
 #ifndef HOUSE_H
 #define HOUSE_H

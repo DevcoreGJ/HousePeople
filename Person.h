@@ -1,29 +1,30 @@
-// person.h (Updated Header file)
+// person.h
 
 #ifndef PERSON_H
 #define PERSON_H
 
 #include <string>
-#include "house.h"
+
+class House;  // Forward declaration of House class
 
 class Person {
 private:
     std::string name;
     int age;
-    House home; // Add a House object as a private attribute
+    House* home;  // Pointer to House object
 
 public:
     // Constructor
-    Person(const std::string& name, int age, const std::string& homeAddress);
+    Person(const std::string& name, int age);
 
     // Getter methods
     std::string getName() const;
     int getAge() const;
-    House getHome() const;
+    bool hasHouse() const;
+    House* getHouse();
 
-    // Setter methods
-    void setName(const std::string& name);
-    void setAge(int age);
+    // Set the person's home
+    void setHome(House* house);
 };
 
 #endif

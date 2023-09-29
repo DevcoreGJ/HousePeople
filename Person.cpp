@@ -1,8 +1,11 @@
+// person.cpp
+
 #include "person.h"
+#include "house.h"
 
 // Constructor definition
-Person::Person(const std::string& name, int age, const std::string& homeAddress)
-    : name(name), age(age), home(homeAddress) {
+Person::Person(const std::string& name, int age)
+    : name(name), age(age), home(nullptr) {  // Initialize home pointer to nullptr
 }
 
 // Getter method definitions
@@ -14,15 +17,17 @@ int Person::getAge() const {
     return age;
 }
 
-House Person::getHome() const {
+bool Person::hasHouse() const {
+    return (home != nullptr);  // Check if home is not nullptr
+}
+
+// Getter methods
+House* Person::getHouse()
+{
     return home;
 }
 
-// Setter method definitions
-void Person::setName(const std::string& name) {
-    this->name = name;
-}
-
-void Person::setAge(int age) {
-    this->age = age;
+// Set the person's home
+void Person::setHome(House* house) {
+    home = house;
 }
