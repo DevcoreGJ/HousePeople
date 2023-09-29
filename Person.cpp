@@ -1,11 +1,10 @@
-// person.cpp (Implementation file)
+// person.cpp
 
 #include "person.h"
 
 // Constructor definition
-Person::Person(const std::string& name, int age) {
-    this->name = name;
-    this->age = age;
+Person::Person(const std::string& name, int age, const std::string& homeAddress)
+    : name(name), age(age), home(homeAddress) {
 }
 
 // Getter method definitions
@@ -15,6 +14,10 @@ std::string Person::getName() const {
 
 int Person::getAge() const {
     return age;
+}
+
+House Person::getHome() const {
+    return home;
 }
 
 // Setter method definitions
